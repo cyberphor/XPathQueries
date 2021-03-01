@@ -2,15 +2,15 @@
 These are XPath queries I'm collecting and using to parse Windows Event logs. Copy & paste them into a Custom View in Event Viewer. 
 
 ## How to Enable Specific Event Logs
-### The Sexy Six (Event IDs 4688, 7045, 4624, 4663, 5156, 7040, 5140)
+### The Sexy Six (Event IDs 4624, 4663, 4688, 5140, 5156, 7040, 7045)
 ```cmd
 auditpol /get /category:'*'
-auditpol /set /subcategory:"Process Creation" /success:enable
 auditpol /set /subcategory:"Logon" /success:enable /failue:enable
 auditpol /set /subcategory:"File System" /success:enable
+auditpol /set /subcategory:"Process Creation" /success:enable
+auditpol /set /subcategory:"File Share" /success:enable
 auditpol /set /subcategory:"Registry" /success:enable
 auditpol /set /subcategory:"Filtering Platform Connection" /success:enable
-auditpol /set /subcategory:"File Share" /success:enable
 ```
 
 ### Removable Media (Event ID 6416)
