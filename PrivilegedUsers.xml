@@ -2,7 +2,7 @@
   <Query Id="0" Path="Security">
     <Select Path="Security">
       *[System[(EventID=4672)]] and
-      *[EventData[Data[@Name='Account Name'] != 'SYSTEM']]
+      *[EventData[Data[@Name='SubjectUserName'] != 'SYSTEM']]
     </Select>
   </Query>
 </QueryList>  	
