@@ -1,4 +1,4 @@
-## Xpath Queries
+## XPath Queries
 These are XPath queries I'm collecting and using to parse Windows Event logs. 
 
 ## References
