@@ -38,6 +38,7 @@ wevtutil sl Microsoft-Windows-DNS-Client/Operational /e:true
 ```
 
 ## References
+* https://conf.splunk.com/session/2015/conf2015_MGough_MalwareArchaelogy_SecurityCompliance_FindingAdvnacedAttacksAnd.pdf
 * https://petri.com/query-xml-event-log-data-using-xpath-in-windows-server-2012-r2
 * https://blog.backslasher.net/filtering-windows-event-log-using-xpath.html
 * https://devblogs.microsoft.com/scripting/understanding-xml-and-xpath/
