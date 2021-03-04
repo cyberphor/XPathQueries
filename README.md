@@ -44,3 +44,4 @@ wevtutil sl Microsoft-Windows-DNS-Client/Operational /e:true
 * https://devblogs.microsoft.com/scripting/understanding-xml-and-xpath/
 * https://www.malwarearchaeology.com/s/Windows-Advanced-Logging-Cheat-Sheet_ver_Feb_2019_v12.pdf
 * https://www.malwarearchaeology.com/s/Windows-ATTCK_Logging-Cheat-Sheet_ver_Sept_2018.pdf
+* https://apps.nsa.gov/iad/library/reports/spotting-the-adversary-with-windows-event-log-monitoring.cfm
