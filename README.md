@@ -69,6 +69,11 @@ nslookup <WEC_server_hostname> # from client
 
 In your Windows Event Forwarding GPO, verify the “Subscription Manager” matches the WEC server’s hostname. For example, if the hostname of your WEC server is `razorcrest`, then your "Subscription Manager" should be configured like this: `Server=http://razorcrest:5985/wsman/SubscriptionManager/WEC`.
 
+If you've added subscriptions, verified network connectivity, and are still not getting logs, force a Group Policy update on the client. 
+```pwsh
+gpupdate /force # from client
+```
+
 ## References
 * https://apps.nsa.gov/iad/library/reports/spotting-the-adversary-with-windows-event-log-monitoring.cfm
 * https://conf.splunk.com/session/2015/conf2015_MGough_MalwareArchaelogy_SecurityCompliance_FindingAdvnacedAttacksAnd.pdf
