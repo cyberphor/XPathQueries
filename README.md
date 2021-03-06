@@ -1,5 +1,5 @@
 ## XPath Queries
-These are XPath queries and Event Subscriptions I'm compiling to filter, collect, and parse Windows Event logs. Copy & paste the XPath queries into a Custom View in Event Viewer or PowerShell. Copy & paste the subscriptions into a file on your Windows Event Collector and run `wecutil` to publish it. For example, you would type `wecutil cs AppLocker.xml` if the name of your subscription file was `AppLocker.xml`, 
+These are XPath queries and Event Subscriptions I'm compiling to filter, collect, and parse Windows Event logs. Copy & paste the XPath queries into a Custom View in Event Viewer or PowerShell. Copy & paste the subscriptions into a file on your Windows Event Collector and run `wecutil` to publish it. For example, if the name of your subscription file is `AppLocker.xml` you would type `wecutil cs AppLocker.xml`. 
 
 ## Table of Contents
 * [How to Enable Specific Event Logs](#how-to-enable-specific-event-logs)
