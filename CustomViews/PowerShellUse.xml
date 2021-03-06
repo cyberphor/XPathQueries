@@ -1,0 +1,6 @@
+<QueryList>
+  <Query Id="0" Path="Microsoft-Windows-PowerShell/Operational">
+    <Select Path="Microsoft-Windows-PowerShell/Operational">
+      *[System[(EventID=4103 or EventID=4104)]]</Select>
+  </Query>
+</QueryList>
