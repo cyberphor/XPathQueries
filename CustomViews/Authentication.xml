@@ -1,0 +1,9 @@
+<QueryList>
+  <Query Id="0" Path="ForwardedEvents">
+    <Select Path="ForwardedEvents">
+      *[System[(EventID=4624 or EventID=4625 or EventID=4634) and TimeCreated[timediff(@SystemTime) &lt;= 604800000]]] and
+      *[EventData[Data[@Name='LogonType'] = '2' ]] or 
+      *[EventData[Data[@Name='LogonType'] = '3' ]]
+    </Select>
+  </Query>
+</QueryList>
