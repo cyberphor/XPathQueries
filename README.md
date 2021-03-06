@@ -1,5 +1,14 @@
 ## XPath Queries
-These are XPath queries I'm collecting and using to parse Windows Event logs. Copy & paste them into a Custom View in Event Viewer. 
+These are XPath queries and Event Subscriptions I'm compiling to filter, collect, and parse Windows Event logs. Copy & paste the XPath queries into a Custom View in Event Viewer or PowerShell. Copy & paste the subscriptions into a file on your Windows Event Collector and run `wecutil` to publish it. For example, you would type `wecutil cs AppLocker.xml` if the name of your subscription file was `AppLocker.xml`, 
+
+## Table of Contents
+* [How to Enable Specific Event Logs](#how-to-enable-specific-event-logs)
+  * [The Sexy Six](#the-sexy-six)
+  * [Removable Media](#removable-media)
+  * [PowerShell](#powershell)
+  * [DNS](#dns)
+* [Troubleshooting Windows Event Forwarding](#troubleshooting-windows-event-forwarding)
+* [References](#references)
 
 ## How to Enable Specific Event Logs
 ### The Sexy Six (Event IDs 4624, 4663, 4688, 5140, 5156, 7040, 7045)
@@ -33,9 +42,28 @@ Set-ItemProperty $ModuleLogging -Name 'EnableModuleLogging' -Value '1'
 ```
 
 ### DNS (Event ID 3006)
-```cmd
+```pwsh
 wevtutil sl Microsoft-Windows-DNS-Client/Operational /e:true
 ```
+
+## Troubleshooting Windows Event Forwarding
+Verify routing between the client and WEC (Windows Event Collection) server.
+```pwsh
+ping <WEC_server_IP_address> # from client
+```
+
+Verify the WEC server is listening on TCP port 5985.
+```pwsh
+netstat | findstr 5985 # from WEC server
+Test-NetConnection -Port 5985 <WEC_server_IP_address> # from client
+```
+
+Verify the client can resolve the hostname of the WEC server.
+```pwsh
+nslookup <WEC_server_hostname> # from client
+```
+
+In your Windows Event Forwarding GPO, verify the “Subscription Manager” matches the WEC server’s hostname. For example, if the hostname of your WEC server is `razorcrest`, then your "Subscription Manager" should be configured like this: `Server=http://razorcrest:5985/wsman/SubscriptionManager/WEC`.
 
 ## References
 * https://apps.nsa.gov/iad/library/reports/spotting-the-adversary-with-windows-event-log-monitoring.cfm
