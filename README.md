@@ -12,7 +12,7 @@ These are XPath queries and Event Subscriptions I'm compiling to filter, collect
 
 ## How to Enable Specific Event Logs
 ### The Sexy Six
-Event IDs 4624, 4663, 4688, 5140, 5156, 7040, 7045
+Event IDs: 4624, 4663, 4688, 5140, 5156, 7040, 7045
 ```cmd
 auditpol /get /category:'*'
 auditpol /set /subcategory:"Logon" /success:enable /failue:enable
@@ -24,14 +24,14 @@ auditpol /set /subcategory:"Filtering Platform Connection" /success:enable
 ```
 
 ### Removable Media
-Event ID 6416
+Event IDs: 6416
 ```cmd
 auditpol /get /subcategory:"Plug and Play Events"
 auditpol /set /subcategory:"Plug and Play Events" /success:enable
 ```
 
 ### Powershell
-Event ID 4103, 4104
+Event IDs: 4103, 4104
 ```pwsh
 $BlockLogging = 'HKLM:\Software\Policies\Microsoft\Windows\PowerShell\ScriptBlockLogging' 
 New-Item $BlockLogging
@@ -45,7 +45,7 @@ Set-ItemProperty $ModuleLogging -Name 'EnableModuleLogging' -Value '1'
 ```
 
 ### DNS
-Event ID 3006
+Event IDs: 3006
 ```pwsh
 wevtutil sl Microsoft-Windows-DNS-Client/Operational /e:true
 ```
