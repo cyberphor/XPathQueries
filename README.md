@@ -79,6 +79,7 @@ gpupdate /force # from client
 * https://conf.splunk.com/session/2015/conf2015_MGough_MalwareArchaelogy_SecurityCompliance_FindingAdvnacedAttacksAnd.pdf
 * https://www.malwarearchaeology.com/s/Windows-Advanced-Logging-Cheat-Sheet_ver_Feb_2019_v12.pdf
 * https://www.malwarearchaeology.com/s/Windows-ATTCK_Logging-Cheat-Sheet_ver_Sept_2018.pdf
+* https://www.appliedincidentresponse.com/resources/
 * https://github.com/palantir/windows-event-forwarding
 * https://medium.com/palantir/windows-event-forwarding-for-network-defense-cb208d5ff86f
 * https://petri.com/query-xml-event-log-data-using-xpath-in-windows-server-2012-r2
